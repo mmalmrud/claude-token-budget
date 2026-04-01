@@ -1,0 +1,29 @@
+[claude]
+# Org and account IDs
+# Find it: open Chrome DevTools on https://claude.ai/settings/usage → Network tab, filter on Fetch/XHR →
+# look for a request to /api/organizations/<YOUR_ORG_ID>/overage_spend_limit?account_uuid=<YOUR_ACCOUNT_ID>
+
+# Your Claude.ai organization ID.
+org_uuid = ""
+
+# Your personal Claude.ai account ID.
+account_uuid = ""
+
+[cache]
+# Path to the budget cache JSON, relative to the token_budget folder.
+# Can also be an absolute path if you want the cache stored elsewhere.
+file = "token_budget_cache.json"
+
+# How many days old the cache can be before token_status.py shows '--' instead of a value.
+# Increase if you don't run Claude Code every day.
+stale_days = 1
+
+[budget]
+# Day of the month your Claude.ai credit balance resets.
+# Check your billing cycle if unsure — most accounts reset on the 1st.
+monthly_reset_day = 1
+
+# If true, the daily budget denominator counts only Mon–Fri.
+# If false, all calendar days are counted.
+# Both values are always stored in the cache; this only controls which one the status bar displays.
+exclude_weekends = true
